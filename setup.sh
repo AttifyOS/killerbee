@@ -35,7 +35,7 @@ install() {
   for tool in zbjammer zbdump zbreplay zbopenear zborphannotify zbpanidconflictflood zbstumbler zbkey zbrealign zbfakebeacon zbid zbconvert zbwardrive zbdsniff zbgoodfind zbcat zbassocflood zbscapy zbwireshark
   do
     echo '#!/usr/bin/env sh' > $APM_PKG_BIN_DIR/$tool
-    echo "PATH=$APM_PKG_INSTALL_DIR/bin:\$PATH $APM_PKG_INSTALL_DIR/bin/$tool" >> $APM_PKG_BIN_DIR/$tool
+    echo "PATH=$APM_PKG_INSTALL_DIR/bin:\$PATH $APM_PKG_INSTALL_DIR/bin/$tool \"\$@\"" >> $APM_PKG_BIN_DIR/$tool
     chmod +x $APM_PKG_BIN_DIR/$tool
   done
 }
